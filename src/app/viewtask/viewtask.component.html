@@ -1,0 +1,10 @@
+<h2>My Tasks</h2>
+<ul class="heroes">
+  <li *ngFor="let task of tasks" >
+    <span class="badge">{{task.task}}</span> 
+    <span class="badge">{{task.parentTask}}</span>
+    <span class="badge">{{task.startDate}}</span>
+    <span class="badge">{{task.endDate}}</span>
+    <span class="badge"><a routerLink="/edittask/{{task.id}}">{{task.id}}</a></span>
+  </li>
+</ul>

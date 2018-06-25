@@ -1,0 +1,28 @@
+<form  >
+  <p>Add Task</p>
+  <label> ID :
+    <input [(ngModel)]="task.id" name="id" >
+  </label>
+  <label> Task: 
+    <input [(ngModel)]="task.task" name="task" placeholder="task" >
+  </label>
+  <br />
+  <label> Priority: 
+    <mat-slider thumbLabel [(ngModel)]="task.priority" min="1" max="30" step="1" tickInterval="3" name="priority" placeholder="priority"> </mat-slider>
+
+  </label>
+  <br />
+  <label> Parent Task: 
+    <input [(ngModel)]="task.parentTask" name="parentTask" placeholder="parentTask">
+  </label>
+  <br />
+  <label> Start Date: 
+    <input [(ngModel)]="task.startDate" name="startDate" placeholder="startDate">
+  </label>
+  <br />
+  <label> End Date: 
+    <input [(ngModel)]="task.endDate" name="endDate" placeholder="endDate">
+  </label>
+  <br />
+  <button (click)="save()">save</button>
+</form>
