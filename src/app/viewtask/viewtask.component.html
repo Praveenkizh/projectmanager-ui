@@ -1,10 +1,38 @@
 <h2>My Tasks</h2>
 <ul class="heroes">
-  <li *ngFor="let task of tasks" >
-    <span class="badge">{{task.task}}</span> 
-    <span class="badge">{{task.parentTask}}</span>
-    <span class="badge">{{task.startDate}}</span>
-    <span class="badge">{{task.endDate}}</span>
-    <span class="badge"><a routerLink="/edittask/{{task.id}}">{{task.id}}</a></span>
+<li>
+<label> Task :
+<input [(ngModel)]="searchTask" placeholder="">
+</label>
+<label> ParentTask :
+  <input [(ngModel)]="searchParent" placeholder="">
+  </label>
+</li>
+<li>
+  <label> Priority From :
+    <input [(ngModel)]="searchPriorityFrom" placeholder="">
+  </label>
+  <label> Priority To :
+    <input [(ngModel)]="searchPriorityTo" placeholder="">
+  </label>
+  </li>
+  <li>
+  <label> Start Date :
+    <input [(ngModel)]="searchStartDate" placeholder="">
+  </label>
+  <label> End Date :
+    <input [(ngModel)]="searchEndDate" placeholder="">
+  </label>
+</li>
+</ul>
+<ul class="heroes">
+  <li *ngFor="let task of tasks | filterTask : searchTask | filterParent : searchParent | filterPriorityFrom : searchPriorityFrom |  filterPriorityTo : searchPriorityTo | filterStartDate : searchStartDate | filterEndDate : searchEndDate">
+    <span class="task">{{task.task}}</span> 
+    <span class="task">{{task.parentTask.parentTask}}</span>
+    <span class="stats">{{task.priority}}</span>
+    <span class="stats">{{task.startDate}}</span>
+    <span class="stats">{{task.endDate}}</span>
+    <span class="stats"><a routerLink="/edittask/{{task.taskId}}">Edit</a></span>
+    <span class="stats"><a routerLink="/endtask/{{task.taskId}}">End</a></span>
   </li>
 </ul>

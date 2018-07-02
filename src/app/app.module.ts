@@ -8,6 +8,12 @@ import { AddtaskComponent } from './addtask/addtask.component';
 import { ViewtaskComponent } from './viewtask/viewtask.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
+import { FilterTaskPipe }from './filters/filtertask.pipe';
+import { FilterParentPipe } from './filters/filterparent.pipe';
+import { FilterPriorityFrom } from './filters/filterpriorityfrom.pipe';
+import { FilterPriorityTo } from './filters/filterpriorityto.pipe';
+import { FilterEndDate } from './filters/filterenddate.pipe';
+import { FilterStartDate } from './filters/filterstartdate.pipe';
 import 'hammerjs';
 
 
@@ -15,7 +21,13 @@ import 'hammerjs';
   declarations: [
     AppComponent,
     AddtaskComponent,
-    ViewtaskComponent
+    ViewtaskComponent,
+    FilterTaskPipe,
+    FilterParentPipe,
+    FilterPriorityFrom,
+    FilterPriorityTo,
+    FilterStartDate,
+    FilterEndDate
   ],
   imports: [
     BrowserModule,

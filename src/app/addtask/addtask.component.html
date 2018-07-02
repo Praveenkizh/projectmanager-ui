@@ -1,7 +1,7 @@
 <form  >
   <p>Add Task</p>
   <label> ID :
-    <input [(ngModel)]="task.id" name="id" >
+    <input [(ngModel)]="task.taskId" name="taskId" >
   </label>
   <label> Task: 
     <input [(ngModel)]="task.task" name="task" placeholder="task" >
@@ -13,15 +13,15 @@
   </label>
   <br />
   <label> Parent Task: 
-    <input [(ngModel)]="task.parentTask" name="parentTask" placeholder="parentTask">
+    <input [(ngModel)]="task.parentId" name="parentId" placeholder="parentId">
   </label>
   <br />
   <label> Start Date: 
-    <input [(ngModel)]="task.startDate" name="startDate" placeholder="startDate">
+    <input type="date" [(ngModel)]="task.startDate" name="startDate" placeholder="startDate">
   </label>
   <br />
   <label> End Date: 
-    <input [(ngModel)]="task.endDate" name="endDate" placeholder="endDate">
+    <input type="date" [(ngModel)]="task.endDate" name="endDate" placeholder="endDate">
   </label>
   <br />
   <button (click)="save()">save</button>

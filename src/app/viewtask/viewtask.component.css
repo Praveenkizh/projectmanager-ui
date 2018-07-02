@@ -65,7 +65,7 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 50em;
+  width: 60em;
 }
 .heroes li {
   position: relative;
@@ -73,15 +73,16 @@
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
-  height: 1.6em;
+  height: 2.6em;
   border-radius: 4px;
 }
+
 
 .heroes li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
-}
+} 
 
 .heroes a {
   color: #888;
@@ -91,9 +92,10 @@
   width: 10px;
 }
 
+
 .heroes a:hover {
   color:#607D8B;
-}
+} 
 
 
 .heroes .badge {
@@ -108,23 +110,41 @@
   top: -4px;
   height: 1.8em;
   min-width: 16px;
-  text-align: right;
+  text-align: left;
   margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+ 
 }
-.heroes .light {
+
+.heroes .task {
   display: inline-block;
   font-size: small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: rgb(238, 243, 245);
-  line-height: 1em;
+  background-color: #607D8B;
+  line-height: 2em;
   position: relative;
   left: -1px;
   top: -4px;
-  height: 1.8em;
-  min-width: 16px;
-  text-align: right;
+  height: 2.8em;
+  min-width: 200px;
+  text-align: left;
   margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+ 
+}
+
+.heroes .stats {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 2em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 2.8em;
+  min-width: 75px;
+  text-align: left;
+  margin-right: .8em;
+ 
 }

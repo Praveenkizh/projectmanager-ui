@@ -1,8 +1,10 @@
+import { ParentTask } from '../app/ParentTask';
 export class Task{
-    id:Number;
+    taskId:Number;
     task:String;
     priority:Number;
-    parentTask:String;
+    parentTask:ParentTask;
+    parentId:Number;
     startDate:Date;
     endDate:Date;
 
