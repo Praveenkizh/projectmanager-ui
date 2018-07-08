@@ -15,6 +15,7 @@ import { FilterPriorityTo } from './filters/filterpriorityto.pipe';
 import { FilterEndDate } from './filters/filterenddate.pipe';
 import { FilterStartDate } from './filters/filterstartdate.pipe';
 import 'hammerjs';
+import { EdittaskComponent } from './edittask/edittask.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import 'hammerjs';
     FilterPriorityFrom,
     FilterPriorityTo,
     FilterStartDate,
-    FilterEndDate
+    FilterEndDate,
+    EdittaskComponent
   ],
   imports: [
     BrowserModule,

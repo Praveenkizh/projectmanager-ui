@@ -1,5 +1,5 @@
 <form  >
-  <p>Add Task</p>
+  <p>Update Task</p>
   <!--<label> ID :
     <input [(ngModel)]="task.taskId" name="taskId" >
   </label>-->
@@ -13,7 +13,7 @@
   </label>
   <br />
   <label> Parent Task: 
-    <input [(ngModel)]="task.parentId" name="parentId" placeholder="parentId">
+    <input [(ngModel)]="task.parentTask.parentId" name="parentId" placeholder="parentId">
   </label>
   <br />
   <label> Start Date: 
@@ -24,5 +24,5 @@
     <input type="date" [(ngModel)]="task.endDate" name="endDate" placeholder="endDate">
   </label>
   <br />
-  <button (click)="save()">save</button>
+  <button (click)="save()">Update</button>
 </form>

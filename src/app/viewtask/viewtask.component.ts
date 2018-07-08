@@ -9,6 +9,13 @@ import { Task } from '../task';
   styleUrls: ['./viewtask.component.css']
 })
 export class ViewtaskComponent implements OnInit {
+  searchTask : String;
+  searchParent: String;
+  searchPriorityFrom: Number;
+  searchPriorityTo: Number;
+  searchStartDate: Date;
+  searchEndDate: Date;
+
   tasks : Task[];
   constructor(private taskService: TaskService) { }
   getTasks() : void{

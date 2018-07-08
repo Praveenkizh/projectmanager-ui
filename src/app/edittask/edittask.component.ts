@@ -5,13 +5,13 @@ import {TaskService} from '../task.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-
 @Component({
-  selector: 'app-addtask',
-  templateUrl: './addtask.component.html',
-  styleUrls: ['./addtask.component.css']
+  selector: 'app-edittask',
+  templateUrl: './edittask.component.html',
+  styleUrls: ['./edittask.component.css']
 })
-export class AddtaskComponent implements OnInit {
+export class EdittaskComponent implements OnInit {
+
   public task:Task;
   constructor(private taskservice:TaskService,private route: ActivatedRoute,private location: Location) { }
 
@@ -34,7 +34,7 @@ export class AddtaskComponent implements OnInit {
   }
 
   save(): void {
-    this.taskservice.createTask(this.task)
+    this.taskservice.updateTask(this.task)
       .subscribe(() => this.goBack());
   }
 

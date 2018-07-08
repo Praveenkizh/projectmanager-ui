@@ -17,11 +17,23 @@ export class TaskService {
     return this.http.get<Task[]>('http://localhost:8090/api/tasks');
   }
 
-  updateTask (task: Task): Observable<any> {
+  createTask (task: Task): Observable<any> {
     console.log(task);
     task.parentTask = new ParentTask({"parentId":task.parentId, "parentTask":""})
-    return this.http.post('http://localhost:8090/api/tasks/'+task.taskId, task, httpOptions);
+    if(task.taskId == task.parentId){
+      task.parentTask.parentTask = task.task;
     }
+    return this.http.post('http://localhost:8090/api/tasks/', task, httpOptions);
+    }
+
+    updateTask (task: Task): Observable<any> {
+      console.log(task);
+      task.parentTask = new ParentTask({"parentId":task.parentId, "parentTask":""})
+      if(task.taskId == task.parentId){
+        task.parentTask.parentTask = task.task;
+      }
+      return this.http.put('http://localhost:8090/api/tasks/'+task.taskId, task, httpOptions);
+      }
   getTask(taskId:Number): Observable<Task>{
     
     return this.http.get<Task>('http://localhost:8090/api/tasks/'+taskId);
