@@ -4,6 +4,7 @@ import {Task} from '../task';
 import {TaskService} from '../task.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class AddtaskComponent implements OnInit {
 
   goBack(): void{
     
+    this.location.back();
   }
 
   save(): void {

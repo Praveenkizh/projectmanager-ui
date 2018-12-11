@@ -18,21 +18,33 @@
   </li>
   <li>
   <label> Start Date :
-    <input [(ngModel)]="searchStartDate" placeholder="">
+    <input type="date" [(ngModel)]="searchStartDate" placeholder="">
   </label>
   <label> End Date :
-    <input [(ngModel)]="searchEndDate" placeholder="">
+    <input type="date" [(ngModel)]="searchEndDate" placeholder="">
   </label>
 </li>
 </ul>
 <ul class="heroes">
+
+    <li>
+        <span class="task">Task</span> 
+        <span class="task">Parent Task</span>
+        <span class="stats">Priority</span>
+        <span class="btnedit">Start</span>
+        <span class="btnedit">End</span>
+        <span class="btnedit">Edit</span>
+        <span class="btnend">End Task</span>
+      </li>
+
   <li *ngFor="let task of tasks | filterTask : searchTask | filterParent : searchParent | filterPriorityFrom : searchPriorityFrom |  filterPriorityTo : searchPriorityTo | filterStartDate : searchStartDate | filterEndDate : searchEndDate">
     <span class="task">{{task.task}}</span> 
     <span class="task">{{task.parentTask.parentTask}}</span>
     <span class="stats">{{task.priority}}</span>
-    <span class="stats">{{task.startDate}}</span>
-    <span class="stats">{{task.endDate}}</span>
-    <span class="stats"><a routerLink="/edittask/{{task.taskId}}">Edit</a></span>
-    <span class="stats"><a routerLink="/endtask/{{task.taskId}}">End</a></span>
+    <span class="btnedit">{{task.startDate}}</span>
+    <span class="btnedit">{{task.endDate}}</span>
+    <span class="btnedit"><button *ngIf="task.active" routerLink="/edittask/{{task.taskId}}">Edit</button>
+      <button *ngIf="!task.active">Edit</button></span>
+    <span class="btnend"><button (click)="openConfirmationDialog(task)" type="button" class="btn btn-primary">End Task</button></span>
   </li>
 </ul>

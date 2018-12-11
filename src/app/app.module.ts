@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -16,8 +17,7 @@ import { FilterEndDate } from './filters/filterenddate.pipe';
 import { FilterStartDate } from './filters/filterstartdate.pipe';
 import 'hammerjs';
 import { EdittaskComponent } from './edittask/edittask.component';
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,16 +29,19 @@ import { EdittaskComponent } from './edittask/edittask.component';
     FilterPriorityTo,
     FilterStartDate,
     FilterEndDate,
-    EdittaskComponent
+    EdittaskComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatSliderModule
+    MatSliderModule,
+    NgbModalModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  // providers: [ConfirmationDialogService],
+  bootstrap: [AppComponent],
+  // entryComponents: [ ConfirmationDialogComponent ]
 })
 export class AppModule { }

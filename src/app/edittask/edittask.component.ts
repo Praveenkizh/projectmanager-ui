@@ -31,6 +31,7 @@ export class EdittaskComponent implements OnInit {
 
   goBack(): void{
     
+    this.location.back();
   }
 
   save(): void {

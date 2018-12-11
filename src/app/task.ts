@@ -7,6 +7,7 @@ export class Task{
     parentId:Number;
     startDate:Date;
     endDate:Date;
+    active:boolean;
 
     constructor(values: Object = {}){
         Object.assign(this, values);
