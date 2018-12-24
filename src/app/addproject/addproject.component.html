@@ -1,0 +1,29 @@
+<form  >
+  <p>Add Project</p>
+  <!--<label> ID :
+    <input [(ngModel)]="task.taskId" name="taskId" >
+  </label>-->
+  <label> Project: 
+    <input [(ngModel)]="project.projectId" name="projectId" placeholder="projectId" >
+  </label>
+  <br />
+  <label> Project: 
+    <input [(ngModel)]="project.project" name="project" placeholder="project" >
+  </label>
+  <br />
+
+  <label> Priority: 
+    <mat-slider thumbLabel [(ngModel)]="project.priority" min="1" max="30" step="1" tickInterval="3" name="priority" placeholder="priority"> </mat-slider>
+
+  </label>
+  <br />
+  <label> Start Date: 
+    <input type="date" [(ngModel)]="project.startDate" name="startDate" placeholder="startDate">
+  </label>
+  <br />
+  <label> End Date: 
+    <input type="date" [(ngModel)]="project.endDate" name="endDate" placeholder="endDate">
+  </label>
+  <br />
+  <button (click)="save()">save</button> 
+</form>

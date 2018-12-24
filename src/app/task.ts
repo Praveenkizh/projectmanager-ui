@@ -8,6 +8,8 @@ export class Task{
     startDate:Date;
     endDate:Date;
     active:boolean;
+    projectId:Number;
+    isParent:Boolean;
 
     constructor(values: Object = {}){
         Object.assign(this, values);

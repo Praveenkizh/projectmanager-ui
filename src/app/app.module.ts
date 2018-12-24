@@ -18,6 +18,8 @@ import { FilterStartDate } from './filters/filterstartdate.pipe';
 import 'hammerjs';
 import { EdittaskComponent } from './edittask/edittask.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddprojectComponent } from './addproject/addproject.component';
+import { AdduserComponent } from './adduser/adduser.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FilterStartDate,
     FilterEndDate,
     EdittaskComponent,
+    AddprojectComponent,
+    AdduserComponent,
     
   ],
   imports: [

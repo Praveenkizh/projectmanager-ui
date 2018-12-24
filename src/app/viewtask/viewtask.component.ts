@@ -16,13 +16,28 @@ export class ViewtaskComponent implements OnInit {
   searchEndDate: Date;
   tasks : Task[];
   task: Task;
+  private page:number=0;
+  private pages:Array<Number>;
   constructor(private taskService: TaskService) { }
   getTasks() : void{
     this.taskService.getTasks().subscribe(tasks => this.tasks = tasks);
   }
+  setPage(i, event:any){
+    event.preventDefault();
+    this.page = i;
+    this.getTasksPage();
+  }
+
+  getTasksPage() : void{
+    this.taskService.getTasksPage(this.page).subscribe(
+      tasks => {this.tasks = tasks['content'];
+                this.pages = new Array(tasks['totalPages'])
+               });
+  }
 
   ngOnInit() {
-    this.getTasks();
+    //this.getTasks();
+    this.getTasksPage();
   }
 
   public openConfirmationDialog(id:String) {

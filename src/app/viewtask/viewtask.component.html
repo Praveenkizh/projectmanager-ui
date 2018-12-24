@@ -48,3 +48,9 @@
     <span class="btnend"><button (click)="openConfirmationDialog(task)" type="button" class="btn btn-primary">End Task</button></span>
   </li>
 </ul>
+<hr>
+<ul class="nav nav-pills">
+<li class="nav-item" *ngFor="let p of pages; let i=index">
+  <a class="nav-link active" href="" (click)="setPage(i, $event)">{{i}}</a>
+</li>
+</ul>

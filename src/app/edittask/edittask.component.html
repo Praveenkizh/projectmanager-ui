@@ -3,10 +3,18 @@
   <!--<label> ID :
     <input [(ngModel)]="task.taskId" name="taskId" >
   </label>-->
+  <label> Project: 
+    <input [(ngModel)]="task.projectId" name="projectId" placeholder="projectId" >
+  </label>
+  <br />
+
   <label> Task: 
     <input [(ngModel)]="task.task" name="task" placeholder="task" >
   </label>
   <br />
+
+  <input [(ngModel)]="task.isParent" type="checkbox" name="isParent" >
+
   <label> Priority: 
     <mat-slider thumbLabel [(ngModel)]="task.priority" min="1" max="30" step="1" tickInterval="3" name="priority" placeholder="priority"> </mat-slider>
 

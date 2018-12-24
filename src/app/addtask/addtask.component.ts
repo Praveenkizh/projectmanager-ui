@@ -30,6 +30,11 @@ export class AddtaskComponent implements OnInit {
       }
   }
 
+  isDisabled() : Boolean {
+    //alert(this.task.isParent);
+    return this.task.isParent;
+  }
+
   goBack(): void{
     
     this.location.back();
