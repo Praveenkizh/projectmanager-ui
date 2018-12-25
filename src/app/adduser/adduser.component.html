@@ -1,3 +1,23 @@
-<p>
-  adduser works!
-</p>
+<form  >
+  <p>Add User</p>
+  <!--<label> ID :
+    <input [(ngModel)]="task.taskId" name="taskId" >
+  </label>-->
+ 
+  <br />
+  <label> First Name: 
+    <input [(ngModel)]="user.firstName" name="firstName" placeholder="firstName" >
+  </label>
+  
+  <br />
+  <label> Last Name: 
+    <input [(ngModel)]="user.lastName" name="lastName" placeholder="lastName" >
+  </label>
+  <br />
+  <label> User ID: 
+    <input [(ngModel)]="user.employeeId" name="employeeId" placeholder="employeeId" >
+  </label>
+  <br />
+  
+  <button (click)="save()">save</button> 
+</form>

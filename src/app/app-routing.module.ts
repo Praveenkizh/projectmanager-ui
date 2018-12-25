@@ -9,6 +9,7 @@ import { AdduserComponent } from './adduser/adduser.component';
 const routes: Routes = [
   { path: 'addproject', component: AddprojectComponent },
   { path: 'addtask', component: AddtaskComponent },
+  { path: 'adduser', component:AdduserComponent},
   { path: 'viewtask', component: ViewtaskComponent },
   { path: 'addtask/:id', component: AddtaskComponent },
   { path: 'edittask/:id', component: EdittaskComponent }
