@@ -13,15 +13,20 @@ import { Router } from '@angular/router';
 })
 export class AddprojectComponent implements OnInit {
   public project:Project;
+  public projects:Project[];
   constructor(private projectservice:ProjectService,private route: ActivatedRoute,private location: Location) { }
 
   ngOnInit() {
     this.project = new Project({"projectId": 0});
+    this.getProjects();
   }
 
   goBack(): void{
     
     this.location.back();
+  }
+  getProjects(): void{
+    this.projectservice.getProjects().subscribe(projects => this.projects = projects);
   }
 
   save(): void {
@@ -34,5 +39,12 @@ export class AddprojectComponent implements OnInit {
   getNotification(userId): void{
     alert(userId);
     this.project.managerId = userId;
+  }
+
+  edit(project): void {
+    //alert(user.userId);
+    this.project = project;
+    
+    
   }
 }

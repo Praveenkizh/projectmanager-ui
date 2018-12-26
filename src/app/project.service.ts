@@ -16,4 +16,8 @@ export class ProjectService {
   createProject(project:Project): Observable<any> {
     return this.http.post('http://localhost:8090/project/create/', project, httpOptions);
   }
+
+  getProjects(): Observable<Project[]> {
+    return this.http.get<Project[]>('http://localhost:8090/project/list');
+  }
 }

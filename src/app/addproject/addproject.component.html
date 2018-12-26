@@ -31,5 +31,21 @@
   </label>
   <br />
   <button (click)="save()">save</button> 
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let project of projects">
+     
+        <span class = "name-col">{{project.project}}</span>
+     
+        <span  class = "name-col">{{project.priority}}</span>
+     
+        <span  class = "name-col">{{project.startDate}}</span>
+
+        <span  class = "name-col">{{project.startDate}}</span>
+        <button (click)="edit(project)">Edit</button> 
+      
+         
+    </li>
+  </ul>
   
 </form>

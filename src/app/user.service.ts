@@ -14,7 +14,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   createUser(user:User): Observable<any> {
-    alert('2'+user);
+    
     return this.http.post('http://localhost:8090/user/create/', user, httpOptions);
   }
 
