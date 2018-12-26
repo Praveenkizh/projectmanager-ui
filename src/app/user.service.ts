@@ -17,4 +17,8 @@ export class UserService {
     alert('2'+user);
     return this.http.post('http://localhost:8090/user/create/', user, httpOptions);
   }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>('http://localhost:8090/user/list');
+  }
 }

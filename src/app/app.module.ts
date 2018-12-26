@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+//import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -20,6 +20,7 @@ import { EdittaskComponent } from './edittask/edittask.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddprojectComponent } from './addproject/addproject.component';
 import { AdduserComponent } from './adduser/adduser.component';
+import { NgbdModalUser } from './modal/modal-user';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { AdduserComponent } from './adduser/adduser.component';
     EdittaskComponent,
     AddprojectComponent,
     AdduserComponent,
+    NgbdModalUser
     
   ],
   imports: [
@@ -42,7 +44,7 @@ import { AdduserComponent } from './adduser/adduser.component';
     FormsModule,
     HttpClientModule,
     MatSliderModule,
-    NgbModalModule
+    NgbModule.forRoot()
   ],
   // providers: [ConfirmationDialogService],
   bootstrap: [AppComponent],

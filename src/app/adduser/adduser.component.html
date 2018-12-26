@@ -20,4 +20,18 @@
   <br />
   
   <button (click)="save()">save</button> 
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users">
+     
+        <span class = "name-col">{{user.firstName}}</span>
+     
+        <span  class = "name-col">{{user.lastName}}</span>
+     
+        <span>{{user.employeeId}}</span>
+        <button (click)="edit(user)">Edit</button> 
+      
+         
+    </li>
+  </ul>
 </form>

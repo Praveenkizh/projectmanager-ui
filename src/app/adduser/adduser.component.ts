@@ -14,11 +14,17 @@ import { Router } from '@angular/router';
 export class AdduserComponent implements OnInit {
 
   public user:User;
+  public users:User[];
   constructor(private userservice:UserService,private route: ActivatedRoute,private location: Location) { }
 
  
   ngOnInit() {
     this.user = new User({"userId": 0});
+    this.getUsers();
+  }
+
+  getUsers(): void{
+    this.userservice.getUsers().subscribe(users => this.users = users);
   }
   goBack(): void{
     
@@ -29,6 +35,12 @@ export class AdduserComponent implements OnInit {
     alert('1'+this.user);
     this.userservice.createUser(this.user)
     .subscribe(() => this.goBack());
+  }
+  edit(user): void {
+    alert(user.userId);
+    this.user = user;
+    
+    
   }
 
 }

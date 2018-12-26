@@ -30,4 +30,9 @@ export class AddprojectComponent implements OnInit {
     this.projectservice.createProject(this.project)
     .subscribe(() => this.goBack());
   }
+
+  getNotification(userId): void{
+    alert(userId);
+    this.project.managerId = userId;
+  }
 }

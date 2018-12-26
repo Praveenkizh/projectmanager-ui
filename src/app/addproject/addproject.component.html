@@ -17,6 +17,11 @@
 
   </label>
   <br />
+  <label> Manager: 
+    <input [(ngModel)]="project.managerId" name="managerId" placeholder="managerId" >
+    <ngbd-modal-user (notifyParent) = "getNotification($event)" ></ngbd-modal-user>
+  </label>
+  <br />
   <label> Start Date: 
     <input type="date" [(ngModel)]="project.startDate" name="startDate" placeholder="startDate">
   </label>
@@ -26,4 +31,5 @@
   </label>
   <br />
   <button (click)="save()">save</button> 
+  
 </form>
