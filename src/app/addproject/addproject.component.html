@@ -3,49 +3,76 @@
   <!--<label> ID :
     <input [(ngModel)]="task.taskId" name="taskId" >
   </label>-->
-  <label> Project: 
+  <table class="table">
+    <tr>
+  <!-- <label> Project: 
     <input [(ngModel)]="project.projectId" name="projectId" placeholder="projectId" >
   </label>
-  <br />
-  <label> Project: 
-    <input [(ngModel)]="project.project" name="project" placeholder="project" >
-  </label>
-  <br />
+  <br /> -->
+  <td>
+    <label> Project: 
+      <input [(ngModel)]="project.project" name="project" placeholder="project" >
+    </label>
+  </td>
 
+  <tr>
+    <td>
+        <label> Set Start and End date:
+            <input [(ngModel)]="project.setDate" type="checkbox" name="setDate" >
+            
+            </label>
+            
+    </td>
+    <td>
+  <label> Start Date: 
+      <input type="date" [(ngModel)]="project.startDate" name="startDate" placeholder="startDate" [disabled]="isDisabled()">
+    </label>
+  </td>
+  <td>
+    <label> End Date: 
+      <input type="date" [(ngModel)]="project.endDate" name="endDate" placeholder="endDate" [disabled]="isDisabled()">
+    </label>
+  </td>
+  </tr>
+  <tr>
+    <td>
   <label> Priority: 
     <mat-slider thumbLabel [(ngModel)]="project.priority" min="1" max="30" step="1" tickInterval="3" name="priority" placeholder="priority"> </mat-slider>
 
   </label>
-  <br />
-  <label> Manager: 
+</td>
+</tr>
+<tr>
+  <td>
+    <label> Manager: 
     <input [(ngModel)]="project.managerId" name="managerId" placeholder="managerId" >
     <ngbd-modal-user (notifyParent) = "getNotification($event)" ></ngbd-modal-user>
   </label>
-  <br />
-  <label> Start Date: 
-    <input type="date" [(ngModel)]="project.startDate" name="startDate" placeholder="startDate">
-  </label>
-  <br />
-  <label> End Date: 
-    <input type="date" [(ngModel)]="project.endDate" name="endDate" placeholder="endDate">
-  </label>
-  <br />
+</td>
+</tr>
+  <tr>
+    <td>
   <button (click)="save()">save</button> 
+</td>
+</tr>
+</table>
 
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let project of projects">
-     
-        <span class = "name-col">{{project.project}}</span>
-     
-        <span  class = "name-col">{{project.priority}}</span>
-     
-        <span  class = "name-col">{{project.startDate}}</span>
+<table class="table">
+  
+    <tr *ngFor="let project of projects">
+      
+        <td>{{project.project}}</td>
+        <td>{{project.totalTasks}}</td>
+      
+        <td>{{project.priority}}</td>
+      
+        <td>{{project.startDate}}</td>
 
-        <span  class = "name-col">{{project.startDate}}</span>
-        <button (click)="edit(project)">Edit</button> 
+        <td>{{project.startDate}}</td>
+        <td><button (click)="edit(project)">Edit</button> </td>
       
          
-    </li>
-  </ul>
+    </tr>
+  </table>
   
 </form>

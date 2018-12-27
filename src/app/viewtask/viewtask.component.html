@@ -1,53 +1,67 @@
 <h2>My Tasks</h2>
-<ul class="heroes">
-<li>
-<label> Task :
-<input [(ngModel)]="searchTask" placeholder="">
-</label>
-<label> ParentTask :
-  <input [(ngModel)]="searchParent" placeholder="">
-  </label>
-</li>
-<li>
+<table class="table">
+<tr>
+  <td>
+    <label> Task :
+    <input [(ngModel)]="searchTask" placeholder="">
+    </label>
+  </td>
+  <td>  
+    <label> ParentTask :
+    <input [(ngModel)]="searchParent" placeholder="">
+    </label>
+  </td>
+</tr>
+<tr>
+  <td>
   <label> Priority From :
     <input [(ngModel)]="searchPriorityFrom" placeholder="">
   </label>
+</td>
+<td>
   <label> Priority To :
     <input [(ngModel)]="searchPriorityTo" placeholder="">
   </label>
-  </li>
-  <li>
+</td>
+</tr>
+  <tr>
+    <td>
   <label> Start Date :
     <input type="date" [(ngModel)]="searchStartDate" placeholder="">
   </label>
+</td>
+<td>
   <label> End Date :
     <input type="date" [(ngModel)]="searchEndDate" placeholder="">
   </label>
-</li>
-</ul>
-<ul class="heroes">
+</td>
+</tr>
+</table>
+<table class="table">
 
-    <li>
-        <span class="task">Task</span> 
-        <span class="task">Parent Task</span>
-        <span class="stats">Priority</span>
-        <span class="btnedit">Start</span>
-        <span class="btnedit">End</span>
-        <span class="btnedit">Edit</span>
-        <span class="btnend">End Task</span>
-      </li>
+    <thead>
+      <tr>
+        <th scope="col" >Task</th> 
+        <th scope="col">Parent Task</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Start</th>
+        <th scope="col">End</th>
+        <th scope="col">Edit</th>
+        <th scope="col">End Task</th>
+      </tr>
+    </thead>
 
-  <li *ngFor="let task of tasks | filterTask : searchTask | filterParent : searchParent | filterPriorityFrom : searchPriorityFrom |  filterPriorityTo : searchPriorityTo | filterStartDate : searchStartDate | filterEndDate : searchEndDate">
-    <span class="task">{{task.task}}</span> 
-    <span class="task">{{task.parentTask.parentTask}}</span>
-    <span class="stats">{{task.priority}}</span>
-    <span class="btnedit">{{task.startDate}}</span>
-    <span class="btnedit">{{task.endDate}}</span>
-    <span class="btnedit"><button *ngIf="task.active" routerLink="/edittask/{{task.taskId}}">Edit</button>
-      <button *ngIf="!task.active">Edit</button></span>
-    <span class="btnend"><button (click)="openConfirmationDialog(task)" type="button" class="btn btn-primary">End Task</button></span>
-  </li>
-</ul>
+  <tr *ngFor="let task of tasks | filterTask : searchTask | filterParent : searchParent | filterPriorityFrom : searchPriorityFrom |  filterPriorityTo : searchPriorityTo | filterStartDate : searchStartDate | filterEndDate : searchEndDate">
+    <td>{{task.task}} </td> 
+    <td>{{task.parentTask.parentTask}}</td>
+    <td>{{task.priority}}</td>
+    <td>{{task.startDate}}</td>
+    <td>{{task.endDate}}</td>
+    <td><button *ngIf="task.active" routerLink="/edittask/{{task.taskId}}">Edit</button>
+      <button *ngIf="!task.active">Edit</button></td>
+    <td><button (click)="openConfirmationDialog(task)" type="button" class="btn btn-primary">End Task</button></td>
+    </tr>
+</table>
 <hr>
 <ul class="nav nav-pills">
 <li class="nav-item" *ngFor="let p of pages; let i=index">

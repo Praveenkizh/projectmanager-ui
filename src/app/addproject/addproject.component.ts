@@ -47,4 +47,8 @@ export class AddprojectComponent implements OnInit {
     
     
   }
+  isDisabled() : Boolean {
+    //alert(this.task.isParent);
+    return !this.project.setDate;
+  }
 }
