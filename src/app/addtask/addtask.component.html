@@ -5,6 +5,7 @@
   </label>-->
   <label> Project: 
     <input [(ngModel)]="task.projectId" name="projectId" placeholder="projectId" >
+    <ngbd-modal-project (notifyParent) = "getNotification($event)" ></ngbd-modal-project>
   </label>
   <br />
   <label> Task: 
@@ -24,6 +25,7 @@
   <br />
   <label> Parent Task: 
     <input [(ngModel)]="task.parentId" name="parentId" placeholder="parentId" [disabled]="isDisabled()">
+    <ngbd-modal-parent (notifyParent) = "getNotificationParent($event)" ></ngbd-modal-parent>
   </label>
   <br />
   <label> Start Date: 

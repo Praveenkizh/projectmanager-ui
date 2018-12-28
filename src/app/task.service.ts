@@ -17,6 +17,10 @@ export class TaskService {
     return this.http.get<Task[]>('http://localhost:8090/api/tasks');
   }
 
+  getParentTasks(): Observable<ParentTask[]> {
+    return this.http.get<ParentTask[]>('http://localhost:8090/parent/tasks');
+  }
+
   createTask (task: Task): Observable<any> {
     console.log(task);
     if(task.isParent){

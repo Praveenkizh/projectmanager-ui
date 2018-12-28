@@ -1,36 +1,35 @@
 <form  >
   <p>Update Task</p>
-  <!--<label> ID :
-    <input [(ngModel)]="task.taskId" name="taskId" >
-  </label>-->
   <label> Project: 
-    <input [(ngModel)]="task.projectId" name="projectId" placeholder="projectId" >
-  </label>
-  <br />
-
-  <label> Task: 
-    <input [(ngModel)]="task.task" name="task" placeholder="task" >
-  </label>
-  <br />
-
-  <input [(ngModel)]="task.isParent" type="checkbox" name="isParent" >
-
-  <label> Priority: 
-    <mat-slider thumbLabel [(ngModel)]="task.priority" min="1" max="30" step="1" tickInterval="3" name="priority" placeholder="priority"> </mat-slider>
-
-  </label>
-  <br />
-  <label> Parent Task: 
-    <input [(ngModel)]="task.parentTask.parentId" name="parentId" placeholder="parentId">
-  </label>
-  <br />
-  <label> Start Date: 
-    <input type="date" [(ngModel)]="task.startDate" name="startDate" placeholder="startDate">
-  </label>
-  <br />
-  <label> End Date: 
-    <input type="date" [(ngModel)]="task.endDate" name="endDate" placeholder="endDate">
-  </label>
-  <br />
-  <button (click)="save()">Update</button>
-</form>
+      <input [(ngModel)]="task.projectId" name="projectId" placeholder="projectId" [disabled]="true">
+    </label>
+    <br />
+    <label> Task: 
+      <input [(ngModel)]="task.task" name="task" placeholder="task" >
+    </label>
+    <br />
+  
+    <label> Parent Task:
+    <input [(ngModel)]="task.isParent" type="checkbox" name="isParent" >
+    
+    </label>
+    <br />
+    <label> Priority: 
+      <mat-slider thumbLabel [(ngModel)]="task.priority" min="1" max="30" step="1" tickInterval="3" name="priority" placeholder="priority"> </mat-slider>
+  
+    </label>
+    <br />
+    <label> Parent Task: 
+      <input [(ngModel)]="task.parentTask.parentTask" name="parentTask" placeholder="parentTask" [disabled]="true">
+    </label>
+    <br />
+    <label> Start Date: 
+      <input type="date" [(ngModel)]="task.startDate" name="startDate" placeholder="startDate" [disabled]="isDisabled()">
+    </label>
+    <br />
+    <label> End Date: 
+      <input type="date" [(ngModel)]="task.endDate" name="endDate" placeholder="endDate" [disabled]="isDisabled()">
+    </label>
+    <br />
+    <button (click)="save()">Update</button>
+  </form>

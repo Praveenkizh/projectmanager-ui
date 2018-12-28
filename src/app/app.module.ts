@@ -21,6 +21,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddprojectComponent } from './addproject/addproject.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { NgbdModalUser } from './modal/modal-user';
+import { NgbdModalProject } from './modal/modal-project';
+import { NgbdModalParent } from './modal/modal-parent';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,9 @@ import { NgbdModalUser } from './modal/modal-user';
     EdittaskComponent,
     AddprojectComponent,
     AdduserComponent,
-    NgbdModalUser
+    NgbdModalUser,
+    NgbdModalProject,
+    NgbdModalParent
     
   ],
   imports: [
@@ -44,7 +49,8 @@ import { NgbdModalUser } from './modal/modal-user';
     FormsModule,
     HttpClientModule,
     MatSliderModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    Ng2OrderModule
   ],
   // providers: [ConfirmationDialogService],
   bootstrap: [AppComponent],

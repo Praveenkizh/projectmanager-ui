@@ -58,21 +58,28 @@
 </table>
 
 <table class="table">
-  
-    <tr *ngFor="let project of projects">
+  <thead>
+    <th><label>Sort By:</label></th>
+    <th><button (click)="sort('startDate')">Start Date</button></th>
+    <th><button (click)="sort('endDate')">End Date</button></th>
+    <th><button (click)="sort('priority')">Priority</button></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects|orderBy:key:reverse">
       
-        <td>{{project.project}}</td>
-        <td>{{project.totalTasks}}</td>
+        <td><label>Project: {{project.project}}</label></td>
+        <td><label>Number of Tasks: {{project.totalTasks}}</label></td>
       
-        <td>{{project.priority}}</td>
+        <td><label>Priority: {{project.priority}}</label></td>
       
-        <td>{{project.startDate}}</td>
+        <td><label>Start Date: {{project.startDate}}</label></td>
 
-        <td>{{project.startDate}}</td>
+        <td><label>End Date: {{project.endDate}}</label></td>
         <td><button (click)="edit(project)">Edit</button> </td>
       
          
     </tr>
+  </tbody>
   </table>
   
 </form>

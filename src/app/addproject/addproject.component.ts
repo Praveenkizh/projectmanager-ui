@@ -12,10 +12,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./addproject.component.css']
 })
 export class AddprojectComponent implements OnInit {
+  key:String;
+  reverse:boolean = false ;
   public project:Project;
   public projects:Project[];
   constructor(private projectservice:ProjectService,private route: ActivatedRoute,private location: Location) { }
 
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
   ngOnInit() {
     this.project = new Project({"projectId": 0});
     this.getProjects();

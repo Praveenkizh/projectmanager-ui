@@ -10,6 +10,7 @@ export class Task{
     active:boolean;
     projectId:Number;
     isParent:Boolean;
+    status:String;
 
     constructor(values: Object = {}){
         Object.assign(this, values);

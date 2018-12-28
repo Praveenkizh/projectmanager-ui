@@ -41,8 +41,18 @@ export class AddtaskComponent implements OnInit {
   }
 
   save(): void {
+    this.task.active = true;
     this.taskservice.createTask(this.task)
       .subscribe(() => this.goBack());
+  }
+
+  getNotification(projectId): void{
+    alert(projectId);
+    this.task.projectId = projectId;
+  }
+
+  getNotificationParent(parentId): void{
+    this.task.parentId = parentId;
   }
 
 }
