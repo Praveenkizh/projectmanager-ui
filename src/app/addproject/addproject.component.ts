@@ -36,25 +36,22 @@ export class AddprojectComponent implements OnInit {
   }
 
   save(): void {
-    alert(this.project.projectId);
-    alert(this.project.project);
+    
     this.projectservice.createProject(this.project)
     .subscribe(() => this.goBack());
   }
 
   getNotification(userId): void{
-    alert(userId);
     this.project.managerId = userId;
   }
 
   edit(project): void {
-    //alert(user.userId);
     this.project = project;
     
     
   }
   isDisabled() : Boolean {
-    //alert(this.task.isParent);
+    
     return !this.project.setDate;
   }
 }

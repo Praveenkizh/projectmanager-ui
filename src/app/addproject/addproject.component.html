@@ -3,23 +3,26 @@
   <!--<label> ID :
     <input [(ngModel)]="task.taskId" name="taskId" >
   </label>-->
-  <table class="table">
+  <table class="table-borderless">
     <tr>
   <!-- <label> Project: 
     <input [(ngModel)]="project.projectId" name="projectId" placeholder="projectId" >
   </label>
   <br /> -->
-  <td>
-    <label> Project: 
+    <td class="labelcol">
+    <label> Project: </label>
+    </td>
+    <td colspan="2">
+      <label>
       <input [(ngModel)]="project.project" name="project" placeholder="project" >
     </label>
   </td>
 
   <tr>
     <td>
-        <label> Set Start and End date:
+        <label> 
             <input [(ngModel)]="project.setDate" type="checkbox" name="setDate" >
-            
+            Set Start and End date:
             </label>
             
     </td>
@@ -36,19 +39,30 @@
   </tr>
   <tr>
     <td>
-  <label> Priority: 
+  <label> Priority: </label>
+  </td>
+  <td>
+    <label>
     <mat-slider thumbLabel [(ngModel)]="project.priority" min="1" max="30" step="1" tickInterval="3" name="priority" placeholder="priority"> </mat-slider>
-
   </label>
-</td>
+  </td>
+
 </tr>
 <tr>
   <td>
     <label> Manager: 
-    <input [(ngModel)]="project.managerId" name="managerId" placeholder="managerId" >
-    <ngbd-modal-user (notifyParent) = "getNotification($event)" ></ngbd-modal-user>
-  </label>
-</td>
+    </label>
+  </td>
+  <td>
+    <label>    <input [(ngModel)]="project.managerId" name="managerId" placeholder="managerId" >
+    </label>
+    </td>
+    <td>
+      <label>
+        
+      <ngbd-modal-user (notifyParent) = "getNotification($event)" ></ngbd-modal-user>
+    </label>
+  </td>
 </tr>
   <tr>
     <td>
@@ -57,7 +71,7 @@
 </tr>
 </table>
 
-<table class="table">
+<table class="table-borderless">
   <thead>
     <th><label>Sort By:</label></th>
     <th><button (click)="sort('startDate')">Start Date</button></th>
@@ -66,15 +80,27 @@
   </thead>
   <tbody>
     <tr *ngFor="let project of projects|orderBy:key:reverse">
-      
-        <td><label>Project: {{project.project}}</label></td>
-        <td><label>Number of Tasks: {{project.totalTasks}}</label></td>
+      <td>
+      <table>
+        <tr>
+            <td><label>Project: {{project.project}}</label></td>
+        </tr>
+        <tr>
+            <td><label>Number of Tasks: {{project.totalTasks}}</label></td>
+            <td><label>completed: {{project.completedTasks}}</label></td>
+        </tr>
+        <tr>
+            <td><label>Start Date: {{project.startDate}}</label></td>
+            
+                    <td><label>End Date: {{project.endDate}}</label></td>
+        </tr>
+      </table>
+        
+      </td> 
       
         <td><label>Priority: {{project.priority}}</label></td>
       
-        <td><label>Start Date: {{project.startDate}}</label></td>
-
-        <td><label>End Date: {{project.endDate}}</label></td>
+        
         <td><button (click)="edit(project)">Edit</button> </td>
       
          

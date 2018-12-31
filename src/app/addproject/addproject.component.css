@@ -1,15 +1,20 @@
 /* HeroDetailComponent's private CSS styles */
 label {
     display: inline-block;
-    width: 3em;
+    width: 15em;
     margin: .5em 0;
     color: #607D8B;
     font-weight: bold;
+    text-align: left;
   }
   input {
     height: 2em;
     font-size: 1em;
     padding-left: .4em;
+    
+  }
+  td {
+    text-align: left;
   }
   button {
     margin-top: 20px;
@@ -30,4 +35,7 @@ label {
   }
   mat-slider {
     width: 300px;
+  }
+  .labelcol{
+    width:50px;
   }

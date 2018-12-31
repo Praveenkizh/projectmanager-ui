@@ -1,49 +1,44 @@
 /* HeroDetailComponent's private CSS styles */
 label {
-    display: inline-block;
-    width: 3em;
-    margin: .5em 0;
-    color: #607D8B;
-    font-weight: bold;
-  }
-  input {
-    height: 2em;
-    font-size: 1em;
-    padding-left: .4em;
-  }
-  button {
-    margin-top: 20px;
-    font-family: Arial;
-    background-color: #eee;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer; cursor: hand;
-  }
-  button:hover {
-    background-color: #cfd8dc;
-  }
-  button:disabled {
-    background-color: #eee;
-    color: #ccc;
-    cursor: auto;
-  }
-  mat-slider {
-    width: 300px;
-  }
-  li.name-col {
-    display: inline-block;
-    font-size: small;
-    color: rgb(255, 255, 255);
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: rgb(41, 135, 179);
-    line-height: 4em;
-    position: relative;
-    left: -1px;
-    top: -4px;
-    height: 2.8em;
-    min-width: 300px;
-    text-align: left;
-    margin-right: .8em;
-   
-  }
+  display: inline-block;
+  width: 15em;
+  margin: .5em 0;
+  color: #607D8B;
+  font-weight: bold;
+  text-align: left;
+}
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: .4em;
+  
+}
+td {
+  text-align: left;
+}
+button {
+  margin-top: 20px;
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer; cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}
+mat-slider {
+  width: 300px;
+}
+.labelcol{
+  width:50px;
+}
+input:invalid{
+  border: 2px dashed red;
+}

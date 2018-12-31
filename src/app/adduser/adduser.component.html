@@ -4,34 +4,42 @@
     <input [(ngModel)]="task.taskId" name="taskId" >
   </label>-->
  
-  <br />
-  <label> First Name: 
-    <input [(ngModel)]="user.firstName" name="firstName" placeholder="firstName" >
+  <table class="table-borderles"><tbody>
+    <tr><td>
+  <label> First Name: </label></td><td><label>
+    <input [(ngModel)]="user.firstName" name="firstName" placeholder="firstName"  >
   </label>
+    </td></tr>
   
-  <br />
-  <label> Last Name: 
-    <input [(ngModel)]="user.lastName" name="lastName" placeholder="lastName" >
+  <tr><td>
+  <label> Last Name: </label></td><td><label>
+    <input [(ngModel)]="user.lastName" name="lastName" placeholder="lastName"  >
   </label>
-  <br />
-  <label> User ID: 
-    <input [(ngModel)]="user.employeeId" name="employeeId" placeholder="employeeId" >
-  </label>
-  <br />
-  
-  <button (click)="save()">save</button> 
+  </td></tr>
 
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let user of users">
-     
-        <span class = "name-col">{{user.firstName}}</span>
-     
-        <span  class = "name-col">{{user.lastName}}</span>
-     
-        <span>{{user.employeeId}}</span>
-        <button (click)="edit(user)">Edit</button> 
-      
+  <tr><td>
+  <label> User ID: </label></td><td><label>
+    <input [(ngModel)]="user.employeeId" name="employeeId" placeholder="employeeId"  >
+  </label>
+  </td></tr>
+  
+  <tr><td>
+  <button (click)="save()">save</button> 
+  </td></tr>
+  </tbody></table>
+  <table class="table-borderles">
+    <tr *ngFor="let user of users">
+      <table class="table-borderles">
+        <tr>
+          <td><label>{{user.firstName}}</label></td><td><button (click)="edit(user)">Edit</button></td>
+        </tr><tr>
+          <td><label>{{user.lastName}}</label></td>
+        </tr><tr>
+          <td><label>{{user.employeeId}}</label></td>
+        </tr>
+           
+      </table>
          
-    </li>
-  </ul>
+    </tr>
+  </table>
 </form>

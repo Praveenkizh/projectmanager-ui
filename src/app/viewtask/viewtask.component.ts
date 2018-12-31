@@ -16,8 +16,8 @@ export class ViewtaskComponent implements OnInit {
   searchEndDate: Date;
   tasks : Task[];
   task: Task;
-  private page:number=0;
-  private pages:Array<Number>;
+  page:number=0;
+  pages:Array<Number>;
   constructor(private taskService: TaskService) { }
   getTasks() : void{
     this.taskService.getTasks().subscribe(tasks => this.tasks = tasks);
@@ -51,7 +51,7 @@ export class ViewtaskComponent implements OnInit {
   }
 
   save(task): void {
-    alert(task.taskId);
+    
     //this.task = new Task({"taskId":id,"active":false});
     task.active = false;
     this.taskService.updateTask(task)

@@ -32,7 +32,7 @@ export class AdduserComponent implements OnInit {
   }
 
   save(): void {
-    alert('1'+this.user);
+    
     this.userservice.createUser(this.user)
     .subscribe(() => this.goBack());
   }

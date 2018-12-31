@@ -22,7 +22,7 @@ export class AddtaskComponent implements OnInit {
   }
   getTask(): void{
       const id = +this.route.snapshot.paramMap.get('id');
-      console.log('in componet - getTask'+id);
+      
       if(id==0){
         this.task = new Task({"id":"","title":""});
       } else {
@@ -31,7 +31,7 @@ export class AddtaskComponent implements OnInit {
   }
 
   isDisabled() : Boolean {
-    //alert(this.task.isParent);
+    
     return this.task.isParent;
   }
 
@@ -47,7 +47,7 @@ export class AddtaskComponent implements OnInit {
   }
 
   getNotification(projectId): void{
-    alert(projectId);
+    
     this.task.projectId = projectId;
   }
 
